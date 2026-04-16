@@ -3,14 +3,13 @@
 > A conversational AI that answers questions **exclusively from your own given data** — no outside knowledge, just your data.
 ---
 ## Quick Start
-### 1. Clone the repository
+#### 1. Clone the repository
 git clone https://github.com/MuhammadAqibb/RAG-Using-langchain-pinecone-and-Gorq-LLM.git
 cd your-repo-name
-### 2. Install dependencies
+#### 2. Install dependencies
 pip install -r requirements.txt
-### 3. Set up your API keys
+#### 3. Set up your API keys
 Rename `.env.example` to `.env` and fill in your keys:
-
 GROQ_API_KEY=your_groq_api_key
 PINECONE_API_KEY=your_pinecone_api_key
 PINECONE_INDEX_NAME=your_index_name
@@ -21,7 +20,6 @@ python ingest.py
 > Only needs to be run once, or whenever you add new documents.
 #### 6. Start the app
 uvicorn server:app
-
 #### 7. Open your browser
 Go to **http://localhost:8000** and start asking questions!
 
