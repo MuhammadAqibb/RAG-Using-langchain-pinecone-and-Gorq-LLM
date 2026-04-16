@@ -2,39 +2,32 @@
 
 > A conversational AI that answers questions **exclusively from your own given data** — no outside knowledge, just your data.
 ---
-
 ## Quick Start
-
-# 1. Clone the repository
+#### 1. Clone the repository
 ```bash
 git clone https://github.com/MuhammadAqibb/RAG-Using-langchain-pinecone-and-Gorq-LLM.git
 cd your-repo-name
-```
-# 2. Install dependencies
+#### 2. Install dependencies
 ```bash
 pip install -r requirements.txt
-```
-# 3. Set up your API keys
+#### 3. Set up your API keys
 Rename `.env.example` to `.env` and fill in your keys:
-```
+
 GROQ_API_KEY=your_groq_api_key
 PINECONE_API_KEY=your_pinecone_api_key
 PINECONE_INDEX_NAME=your_index_name
-```
-# 4. Add your documents
+#### 4. Add your documents
 Drop your PDF or TXT files into the `data/` folder.
-# 5. Ingest your data
+#### 5. Ingest your data
 ```bash
 python ingest.py
-```
 > Only needs to be run once, or whenever you add new documents.
-# 6. Start the app
+#### 6. Start the app
 ```bash
 uvicorn server:app
-```
-# 7. Open your browser
+
+#### 7. Open your browser
 Go to **http://localhost:8000** and start asking questions!
----
 
 ## Tech Stack & Why Each Tool Was Used
 
@@ -48,11 +41,10 @@ Go to **http://localhost:8000** and start asking questions!
 | **sentence-transformers/all-MiniLM-L6-v2** | Embedding Model | Lightweight but powerful model that converts text chunks into searchable vectors |
 | **PyMuPDF** | PDF Loader | Reliably extracts text from complex PDF documents |
 | **python-dotenv** | Config Management | Keeps API keys safe and out of your codebase |
----
+
 
 ## Full Project Pipeline
 
-```
 Your Documents (PDF / TXT)
           │
           ▼
@@ -91,8 +83,6 @@ Your Documents (PDF / TXT)
           │
           ▼
    Answer displayed in Chat UI
-```
----
 
 ## 💡 How It Works
 
@@ -105,7 +95,6 @@ There are two phases:
 - Your question is converted into a vector, Pinecone finds the most relevant chunks, and the LLM uses only those chunks to generate an answer.
 This means the LLM will never make up information — if the answer isn't in your documents, it will say so.
 
----
 ## 🔮 Future Use Cases
 ### Business & Enterprise
 - **Internal knowledge base** — employees can query company policies, handbooks, and SOPs instantly
@@ -129,9 +118,8 @@ This means the LLM will never make up information — if the answer isn't in you
 - **Re-ingestion detection** — automatically detect and re-ingest changed documents
 - **Streaming responses** — stream the LLM response word by word for a better UX
 - **Second project** — connect to the pre-built Wikipedia Pinecone dataset for a general knowledge assistant
----
+
 ## 📁 Project Structure
-```
 my-rag-app/
 │
 ├── data/                  ← Add your PDF and TXT files here
@@ -142,7 +130,7 @@ my-rag-app/
 ├── .env.example           ← Template for required environment variables
 ├── .gitignore             ← Keeps data and .env off GitHub
 └── requirements.txt       ← Python dependencies
-```
+
 ## 🔑 Getting Your API Keys
 - **Groq API Key** → [console.groq.com](https://console.groq.com)
 - **Pinecone API Key** → [app.pinecone.io](https://app.pinecone.io)
