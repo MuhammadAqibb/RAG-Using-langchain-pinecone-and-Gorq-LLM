@@ -1,6 +1,6 @@
 # Private Data RAG Assistant using Langchain, Pinecone, HuggingFace RAG and Groq LLM. Completely Free
 
-> A conversational AI that answers questions **exclusively from your own given data** — no outside knowledge, just your data.
+> A conversational AI that answers questions **exclusively from your own given data** — no outside knowledge, just your data. Stores Conversation history in RAM
 ---
 ## Quick Start
 #### 1. Clone the repository
